@@ -96,7 +96,7 @@ The force on a point charge q at $r_q$ drom point charges $Q_1$ and $Q_2$ at $r_
 \mathbf{F}=\mathbf{F}_{1}+\mathbf{F}_{2}=\frac{q Q_{1}}{4 \pi \epsilon_{0}} \frac{\hat{R}_{1}}{R_{1}^{2}}+\frac{q Q_{2}}{4 \pi \epsilon_{0}} \frac{\hat{R}_{2}}{R_{2}^{2}}
 \end{equation}
 
-\section{1.2 The Electric Field}
+\section{1.1.2 The Electric Field}
 If there is a set of charges $Q_i$, we say that they set up an electric field everywhere in space
 \begin{equation}
 \mathbf{E}=\frac{\mathbf{F}_{q}}{q} \quad(q \rightarrow 0) 
@@ -151,7 +151,211 @@ Elektriske feltet fra en linjeladnings tetthet:
 \mathbf{E}=\int_{L} \frac{1}{4 \pi \epsilon_{0}} \frac{\rho\left(x^{\prime}\right) d x^{\prime}}{R^{2}} \hat{R}
 \end{equation}
 \subsubsection{Symmetribetraktninger}:
-For eksempel: Gitt en ring ladning, så vil det være umiddelbart synlig at alle komponenter i x og y retning kanselerer, og at feltet kun vil ha en komponent i z-retning. Dette er kun gyldig på z-aksen----
+For eksempel: Gitt en ring ladning, så vil det være umiddelbart synlig at alle komponenter i x og y retning kanselerer, og at feltet kun vil ha en komponent i z-retning. Dette er kun gyldig på z-aksen.
+
+\section{1.2 Electric scalar potential}
+The electric scalar potential is a sort of potential energy per unit charge. 
+The work on charge q when the charge is moved along a path from A to B is
+\begin{equation}
+	W_{AB} = \int_{A}^{B}\mathbf{F}\cdot d\mathbf{r} 
+\end{equation}
+The path integral is independent of the path, due to the fact that electric forces are conservative. \\
+Therefore, we can introduce a potential energy for a charge q in the force field set up by Q as the work needed to move the charge from a point A to a reference point.
+\begin{equation}
+	U_A = W_{A, ref} = U(r)
+\end{equation}
+This is valid for any charge distribution, and subjected to the superposition principle. We define the potential energy as 
+\begin{equation}
+U_A = \int_{A}^{ref}\mathbf{F}\cdot d\mathbf{l} =  q\int_{A}^{ref}\mathbf{E}\cdot d\mathbf{l} 
+\end{equation}
+We then introduce the scalar potential $V_A$ so that
+\begin{equation}
+	U_A = W_{AB} = qV_A
+\end{equation}
+
+The scalar potential in a point A at $\mathbf{r}$ is 
+\begin{equation}
+	V_A = V_{A,1} +V_{A,2} + ... = \sum_i V_{A,i}
+\end{equation}
+It is common to set the reference point in infinity, as long as the charge distribution has a finite extent.
+Furthermore both the divergence and curl of E is zero in electro statistics.
+\subsection{Kirchoff's law of voltages}
+The sum of potential differences along a closed loop (a circuit) is zero
+\begin{equation}
+	V_{AB} + V_{BC} + V_{CA} = \oint\mathbf{E}\cdot d \mathbf{l} = 0
+\end{equation} 
+\subsection{Electric potential due to a given charge distribution}
+A set of charges:
+\begin{equation}
+	V(\mathbf{r}) = \sum_i\dfrac{Q_i}{4\pi4\epsilon_0\abs{\mathbf{r}-\mathbf{r}_i}}
+\end{equation}
+A continuous distribution of charges
+\begin{equation}
+	V = \int_v \dfrac{pdv}{4\pi\epsilon_0R}
+\end{equation}
+
+\subsection{Relation between electric potential and electric field}
+\begin{equation}
+	V(\mathbf{r}) = \int_{r}^{ref}\mathbf{E} \cdot d\mathbf{l}
+\end{equation}
+\begin{equation}
+	\mathbf{E} = -\grad{V}
+\end{equation}
+\subsection{Equipotential surfaces}
+An equipotential surface is a surface where the potential is constant. The gradient to the potential is always normal to the equipotential surface, and points in the direction that V increases the fastest  Therefore, the electric field is normal to the equipotential surface but point in the direction that V decreases the fastest.
+
+\section{1.3 Gauss' law}
+Gauss' law is well suited for systems with a high degree of symmetry.\\
+Gauss' law states that the flux of the electric field through a closed surface S is equal to the total charge in the volume inside the surface
+\begin{equation}
+	\oint_S \mathbf{E} \cdot d\mathbf{S} = \dfrac{Q_S}{\epsilon_0}
+\end{equation}
+S is any closed surface and Q is the net charge in the volume.
+\begin{equation}
+	Q_s = \sum_i Q_{i,in} \hspace{5mm} Q_s = \int_v p_v dv
+\end{equation}
+\subsection{Electric flux}
+The electric flux through a small surface d$\mathbf{A}$ is defined as 
+\begin{equation}
+	d\Phi = \mathbf{E}\cdot d\mathbf{A} = EdA\cos\theta
+\end{equation}
+d$\mathbf{A}$ is the oriented surface element
+\begin{equation}
+	d\mathbf{A} = \hat{n}dA 
+\end{equation}
+Only the field normal to the surface contributes to the flux. The surface normal points outward of the volume.\\
+Gauss law is more general than Columb's law, and is even valid for moving charges. 
+\subsection{Applying Gauss' law}
+A lot of applying Gauss' law is about finding a symmetry that makes the formula valid. First, one need to use symmetry arguments to simplify the description of the electric field. Second, on needs to find a surface S where the electric field was constant. 
+\subsubsection{Gauss' law for a single charge}
+Take a single charge in the origin. We expect that the field must be the same for all possible rotations of the system. We expect the system to have spherical symmetry. Then we realize that the field only can be directed in the radial direction, or else it would break the symmetry. In addition, we realize that the field can not have an angular dependency, because this would also break the symmetry. The field cannot be larger in one direction, because the orientation of the coordinate system is arbitrary Then we apply Gauss.
+\subsubsection{Receipe for using Gauss law to find the electric field}
+\begin{itemize}
+	\item Find a set of surfaces that enclose a volume such that $E\cdot\hat{n}$ is constant
+	on each such surface element. (It may be zero on some of the surfaces
+	— zero is a constant!)
+	\item This often requires that you find a simplfied description of the field
+	in a chosen coordinate system, such as $E = E_r(r)\hat{r}$.
+	\item Find the flux integral
+	\item Use Gauss’ law to find the electric field as a function of charge and
+	position.
+	\item Notice that the surface does not have to enclose all the charges — it
+	is allowed and indeed often necessary to chose a surface that contains
+	only some of the charges. However, the electric field must be a constant
+	on the surfaces you have chosen.
+\end{itemize}
+\subsection{Gauss' law on differential form}
+\begin{equation}
+	\grad \cdot \mathbf{E} = \dfrac{\rho}{\epsilon_0} 
+\end{equation}
+\section{1.4 Polarization and Dielectrics}
+What happens with the electric field inside a material, the electric field will induce local charge displacements in an insulator, which induce an electric field. In conductors, the charges become mobile. This alters the total electric field. 
+\subsection{Dielectrics}
+Dielectric or an insulator is a material with very little free charges (like water, ceramic, plastics or glass). We discern between two types of dielectric: polar and non-polar.
+\subsubsection*{Polar dielectric}
+\textbf{Definition}: In a polar dielectric the electrons are distributed relative to the positive charges so that molecules behave as individual dipoles
+\textbf{External E}: If the polar dielectric is subjected to an external electric field, the dipole molecules will tend to orient in the electric field with the positive part of the dipole
+pointing in the direction of the local field. Without an applied electric
+field, the dipoles will point in random directions, with no net eect, but
+with an applied electric field, the dipoles will tend to align with the
+field. The stronger the field, the stronger will be the alignment and the
+stronger the net dipoles.\\
+\textbf{Example}: water
+
+\subsubsection*{Non-polar dielectric}
+\textbf{Definition}: A non-polar dielectric has electrons distributed symmetrically around the positive charges. There is no net dipoles in the system when there is no applied electric field. However if we apply an external electric field, the electron clouds around atoms
+or molecules tend to be displaced: The electrons will be displaced in a
+direction opposite the electric field, whereas the nucleus is much less displaced. Each atom becomes a small dipole. 
+\textbf{Example}:
+
+\subsubsection{Polar and non-polar induce dipoles}
+Formation of a net set of dipoles. Average dipole moment:
+\begin{equation}
+	P_{av} = \dfrac{\sum_i \mathbf{p}_{i in dv}}{N_{in dv}}
+\end{equation}
+The polarization vector $\mathbf{P}$ is the dipole moment per unit volume. 
+The polarization vector depends on total field. \\
+\subsubsection{Linearr dielectrics}
+For a linear dielectric the polarization is proportional to the total electric field
+\begin{equation}
+	\mathbf{P} = \chi_e\epsilon_0\mathbf{E}
+\end{equation}
+$\chi_e$ is called the electric susceptibility, it has no unit.
+
+
+Te the effect of an applied field is only a reorientation of dipoles
+(for a polar dielectric), or a local displacement of the electron cloud
+(non-polar dielectric), there is no change in the net charge in a volume.
+
+polarization due to small dipoles with dipole moment 
+\begin{equation}
+	\mathbf{p} = Q\mathbf{d}
+\end{equation}
+\subsection{Gauss' law and total charge in a volume}
+Includes both the free charges, and the bound charges that are the result of the total electric field. 
+\begin{equation}
+	\epsilon_0\oint_S \mathbf{E} \cdot d\mathbf{S} =Q_f + Q_b
+\end{equation}
+\begin{equation}
+	\epsilon_0\oint_S \mathbf{E} \cdot d\mathbf{S} =Q_f - \oint_S \mathbf{P}\cdot d\mathbf{S}
+\end{equation}
+\begin{equation}
+\oint_S (\epsilon_0\mathbf{E} +\mathbf{P})\cdot d\mathbf{S} =Q_f
+\end{equation}
+\subsubsection{Displacement field}
+\begin{equation}
+	\mathbf{D} = \epsilon_0\mathbf{E} +\mathbf{P}
+\end{equation}
+\subsubsection{Gauss law}
+\begin{equation}
+	\epsilon_0\oint_S \mathbf{D} \cdot d\mathbf{S} =Q_{\textnormal{free in S}}
+\end{equation}
+\subsubsection{Linearly polarized media}
+\begin{equation}
+	\mathbf{D} = \epsilon\mathbf{E}
+\end{equation}
+$\epsilon_r$ is the relative permittivity, and $\epsilon$ is the absolute permittivity. 
+\subsection{Gauss' law on differential form}
+\begin{equation}
+	\grad \cdot \mathbf{D} = \rho_{free}
+\end{equation}
+
+Materials are dielectric only up to a given field strength. If E becomes to large, the material ionizes, and we get formation of free charges, and the material becomes a conductor. This limit is called the dielectric strength. 
+\subsection{Surface charges}
+\begin{equation}
+	\rho_S = \mathbf{P}\cdot\hat{n}
+\end{equation}
+
+\subsection{Boundary conditions for E and D}
+On the interface of two dielectric media, like plastic and water. For instance, we know the electric field E and displacement D on one side of the interface, what is it on the other? 
+\subsubsection{Tangential boundary condition}
+Use that the line integral of E over a closed loop is zero. 
+\begin{equation}
+	\mathbf{E_1}\cdot d\mathbf{l} + \mathbf{E_2}\cdot (-d\mathbf{l})= 0
+\end{equation}
+\begin{equation}
+	E_{1t} = E_{2t}
+\end{equation}
+
+\subsubsection{Normal boundary condition}
+Use Gauss' law to relate the normal component of the field on each side
+\begin{equation}
+	D_{1n}- D_{2n} = \sigma_s
+\end{equation}
+The normal components of D is related to thesurface charge density. 
+\subsubsection{Two dielectric media}
+If both media are dielectric, there are no free surface charges, and then 
+\begin{equation}
+	D_{1n} = D_{2n}
+\end{equation}
+
+
+
+
+\section{1.5 Laplace Equation}
+
+
+\section{1.6 Conductors}
 
 \section{Examples}
 \begin{itemize}
