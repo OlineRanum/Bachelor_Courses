@@ -506,14 +506,98 @@ On differential form
 \section{2.0 Magnetostatics}
 The forces between conducting conductors. We introduce the magnetic current density $\mathbf{B}$. 
 \section{2.1 Magnetic force, Biot-Savarts law and currentelements}
+We have a conducting conductor with a constant current with a pointcharge Q with a velocity $\mathbf{v}$. It will then be a force on the conductor. This law is callet \textit{Biot-Savarts Law}:
+\begin{equation}
+\mathbf{F}=Q \mathbf{v} \times \mathbf{B}
+\end{equation}
+with
+\begin{equation}
+\mathbf{B}=\frac{\mu_{0}}{4 \pi} \oint_{C} \frac{I \mathrm{d} \mathbf{l} \times \hat{\mathbf{R}}}{R^{2}}
+\end{equation}
+Current density:
+\begin{equation}
+I \mathrm{d} \mathrm{l}=J \mathrm{d} S \mathrm{d} \mathrm{l}=\mathrm{J} \mathrm{d} S \mathrm{d} l=\mathrm{J} \mathrm{d} v
+\end{equation}
+leads to the following description of Biot-Savarts law for a volume
+\begin{equation}
+\mathbf{B}=\frac{\mu_{0}}{4 \pi} \int_{v} \frac{\mathbf{J} \mathrm{d} v \times \hat{\mathbf{R}}}{R^{2}}
+\end{equation}
+and for a plane:
+\begin{equation}
+I \mathrm{d} \mathbf{l}=J_{\mathrm{s}} \mathrm{d} x \mathrm{d} \mathbf{l}=\mathbf{J}_{\mathrm{s}} \mathrm{d} x \mathrm{d} l=\mathbf{J}_{\mathrm{s}} \mathrm{d} S
+\end{equation}
+\begin{equation}
+\mathbf{B}=\frac{\mu_{0}}{4 \pi} \int_{S} \frac{\mathbf{J}_{\mathrm{s}} \mathrm{d} S \times \hat{\mathbf{R}}}{R^{2}}
+\end{equation}
+The current element can also be expressed as
+\begin{equation}
+\mathbf{J} \mathrm{d} v=\sum_{i=1}^{n}\left(N_{i} \mathrm{d} v\right) Q_{i} \mathbf{v}_{i}
+\end{equation}
+or for a single carrier type:
+\begin{equation}
+\mathbf{J} \mathrm{d} v=\sum_{i=1}^{m} Q_{i} \mathbf{v}_{i}
+\end{equation}
 
 \section{2.2 Magnetic forces and momentum}
+The lorentz force:
+\begin{equation}
+\mathbf{F}=Q \mathbf{E}+Q \mathbf{v} \times \mathbf{B}
+\end{equation}
+
+The magnetic force on a current element
+\begin{equation}
+\mathrm{d} \mathbf{F}=\sum_{i=1}^{m} Q_{i} \mathbf{v}_{i} \times \mathbf{B}=\mathbf{J d} v \times \mathbf{B}
+\end{equation}
+For a full current loop
+\begin{equation}
+\mathbf{F}=\oint_{C} I \mathrm{d} \mathbf{l} \times \mathbf{B}
+\end{equation}
+\begin{equation}
+\mathbf{F}=\left(\oint_{C} I \mathrm{d} \mathbf{l}\right) \times \mathbf{B}=0 \times \mathbf{B}=0
+\end{equation}
+The torque:
+\begin{equation}
+\mathbf{T}=Iab B \hat{\mathbf{z}}=I \mathbf{S} \times \mathbf{B}
+\end{equation}
+We define the mangetic moment or dipolemoment 
+\begin{equation}
+\mathbf{m}=I \mathbf{S}
+\end{equation}
+and the mechanical torque
+\begin{equation}
+\mathbf{T}=\mathbf{m} \times \mathbf{B}
+\end{equation}
+\subsection{Hall-effect}
+--
+
 \section{2.3 Magnetic flux out of a closed surface is zero}
-\section{2.4} Amperes law for constant currents
 
-
-
-
+The magnetic flux thorugh a closed surface S is
+\begin{equation}
+\Phi_{S}=\int_{S} \mathbf{B} \cdot \mathrm{d} \mathbf{S}
+\end{equation}
+If the surface is closed the flux is always zero. We get for a current loop
+\begin{equation}
+\nabla \cdot \mathbf{B}=0
+\end{equation}
+\begin{equation}
+\oint_{S} \mathbf{B} \cdot \mathrm{d} \mathbf{S}=\int_{v} \nabla \cdot \mathbf{B} \mathrm{d} v=0
+\end{equation}
+The magnetic field cannot flow netto out of a closed surface, the B-flux field lines bites it's own tail. 
+\section{2.4 Amperes law for constant currents}
+Amperes law states that the circulation of the magnetic fluxdensity around a closed loop C is proportional to the total current going thorugh the surface S limited by the loop
+\begin{equation}
+\oint_{C} \mathbf{B} \cdot \mathrm{d} \mathbf{l}=\mu_{0} I_{\text {total giennom }} s=\mu_{0} \int_{S} \mathbf{J} \cdot \mathrm{d} \mathbf{S}
+\end{equation}
+Amperes law on differential form:
+\begin{equation}
+\nabla \times \mathbf{B}=\mu_{0} \mathbf{J}
+\end{equation} 
+With Stokes' theorem 
+\begin{equation}
+\oint_{C} \mathbf{B} \cdot \mathrm{d} \mathbf{l}=\int_{S} \nabla \times \mathbf{B} \cdot \mathrm{d} \mathbf{S}=\mu_{0} \int_{S} \mathbf{J} \cdot \mathrm{d} \mathbf{S}
+\end{equation}
+\subsection{The solenoid}
 
 
 
