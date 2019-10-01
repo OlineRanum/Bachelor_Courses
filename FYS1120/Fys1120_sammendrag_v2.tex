@@ -353,17 +353,179 @@ If both media are dielectric, there are no free surface charges, and then
 
 
 \section{1.5 Laplace Equation}
+Poissons and Laplace equation lets us find the electric potential and therefore the electric field by solving a differential equation. 
+
+\subsection{Lightning and the effect of dielectric breakdown}
+When the potential across a small dielectric region exceeds a maximum value, the charges (electrons) are noe long bound, but ripped from their bound position. We call this dielectric breakdown. The result is the motion of charges, and a change in potential. 
+\subsection{Finding the electric potential}
+Using the equations we already know
+\begin{equation}
+	\grad \cdot \mathbf{D} = \grad \cdot \epsilon \mathbf{E} = \grad \cdot (-\epsilon \grad{V})
+\end{equation}
+This gives Poisson's equation
+\begin{equation}
+	\grad^2V = -\dfrac{\rho}{\epsilon}
+\end{equation}
+Where Laplace equation
+\begin{equation}
+	\grad^2V = 0
+\end{equation}
+
+\subsection*{Existence, uniqueness and boundary conditions}
+Poisson's equation has a unique solution given that the value of V on the external boundery is specified. If we find a solution that satisfies the boundary conditions, then the solution is the solution. 
+\textbf{Dirichlet boundary conditions}: Specifies the calue of the potential at the boundary\\
+\textbf{Von Neumann boundary conditions}: Specify the derivative of V in a given direction of n, typically normal to the boundary. 
+
+\subsection*{Lightning}
 
 
 \section{1.6 Conductors}
 
-\section{Examples}
-\begin{itemize}
-	\item Electric field from two charges (FN 1)
-	\item Electric field from a dipole
-	\item Visualizing a dipole field
-	\item Elektric Field from a ring charge
-\end{itemize}
+\textit{The motion of charges}\\
+
+\textbf{Conductors}: Materials that contain a large number of charges, usually electrons, that are free to move. 
+
+\subsection*{Properties of an ideal conductor in equilibrium}
+\textbf{Equilibrium}: When all the charges have finished moving
+
+\begin{enumerate}
+	\item $\mathbf{E} = 0$ inside the ideal conductor. Otherwise, the electric field would move charges until they fall to rest. The field from the field from these charges will then compensate the external field.
+	\item $\rho = 0$ inside an ideal conductory. Since $\mathbf{E} = 0$ inside the conductor, Gauss law tell us that $\grad{\cdot\mathbf{D}} = \grad{\cdot(\epsilon_0\mathbf{E} + \mathbf{P})} = 0$. All the charges must be on the surface. The surface charge density is often called an induced surface charge density, since it is often the consequence of an external field
+	\item The conductor is an equipotential surface. (A potential s differences between two points in the conductor is $V_{AB} = \int_{A}^{B}\mathbf{E}\cdot d\mathbf{l} = \int_{A}^{B}0d\mathbf{l} = 0$
+	\item $E_t = 0$ immediately outside the conductor This follows from the boundary conditions $E_{2t} = E_{1t}$, and $E_{t}$ is zero inside the conductor.
+	\item $E_n = \sigma/\epsilon_0$ (Assume no polarization) from boundary conditions and that $E_n = 0$ inside the conductor. So $\mathbf{E}$ is normal to a conductor (that is linear dielectric, or not a dielectric). 
+\end{enumerate}
+OBS: There can be excess charge in a conductor, but it has to be on the surface. I.e. net charge does not have to be zero. 
+
+
+\subsection{Speilladning}
+A point charge Q is located a distance h above a grounded, conducting plane with potential $V_0 = 0$, how to find the surface charge distribution in the conductor plane? 
+
+
+
+\section{1.7 Capacitance}
+A capacitor is to conductors separated by a dielectric medium with permittivity $\epsilon$
+\begin{equation}
+	C = \dfrac{Q}{V}, \hspace{5mm} [F]
+\end{equation}
+Circuit equation for a capacitor
+\begin{equation}
+	I = \dfrac{dQ}{dt} = \dfrac{d(CV)}{dt} = C\dfrac{dV}{dt}
+\end{equation}
+\textbf{Current}: Charge per unit time
+\begin{equation}
+	I = \dfrac{dQ}{dt}
+\end{equation}
+\subsection{parallel-plate capacitor}
+To parallel, equal, conducting planes of area S.
+Given that the planes are separated by an isolator, a pure dielectric media, the capacitances is 
+\subsubsection*{parallel coupling of parallel plate capacitor}
+\begin{equation}
+	C = \dfrac{Q_1 +Q_2 + \dots + Q_N}{V} = C_1 + C_2 +\dots C_N
+\end{equation}
+\subsubsection*{Series coupling of parallel plate capacitor}
+\begin{equation}
+	C = \dfrac{Q}{V} = \dfrac{Q}{V_{C1} + V_{C2} + \dots \ V_{CN}} = \dfrac{1}{\dfrac{1}{C_1}+\dfrac{1}{C_2}+\dots + \dfrac{1}{C_N}}
+\end{equation}
+Disse formlene gjelder kun dersom det ikke går feltlinjer mellom de ulike kondensatorene
+\subsection{Capacitance per unit length of a coaxial cable}
+One inner and one outer conductor
+\begin{equation}
+	C' = \dfrac{Q'}{V_0} \end{equation}
+	\begin{equation}
+	V_0 = \dfrac{Q'}{2\pi\epsilon}\ln{\dfrac{b}{a}}\end{equation}
+\begin{equation}
+	C' = \dfrac{2\pi\epsilon}{\ln{\dfrac{b}{a}}}
+\end{equation}
+
+\section{1.8 Energy in electrical fields}
+How much energy is stored in a capacitor?
+Assuming linear media around conductors. Initially we have zero potential difference or charge. Then vi move (positive) charge from the lower plane to the upper, until we have +Q charge and potential V on the upper plane. This process is initially easy, but becomes harder as we have to work against the electrical field. Therefore, we have to preform work.
+\begin{equation}
+	A_e = \int_{0}^{q}V(q)dq =\int_{0}^{q}\dfrac{q}{C}dq  = \dfrac{Q^2}{2C}
+\end{equation}
+This is the electrical energy stored in the capacitor, and is equivalent to 
+\begin{equation}
+	W_e = \dfrac{1}{2}CV^2
+\end{equation}
+Is only valid in a linear, isotropic media. The energy density:
+\begin{equation}
+	w_e = \dfrac{1}{2}\epsilon E^2 = \dfrac{1}{2}\mathbf{D}\cdot \mathbf{E}
+\end{equation}
+The latter is also valid in an anisotropic media. 
+
+\section{1.9 Current, current density, loss, resistance and conservation of charge}
+An electrical field exerts a force $q\mathbf{E}$ on a charge q, if the media has free charges a current will be induced. 
+\begin{equation}
+	\mathbf{J} = Nq\mathbf{v}
+\end{equation}
+with N various charge carriers
+\begin{equation}
+\mathbf{J} = \sum_i N_iq_i\mathbf{v}_i
+\end{equation}
+The current 
+\begin{equation}
+	I = \int_S \mathbf{J}\cdot d\mathbf{S}
+\end{equation}
+Ohm's law on local form
+\begin{equation}
+	\mathbf{J} = \sigma\mathbf{E}
+\end{equation}
+the conductivity $\sigma$ states how easily the conductor carries current. An ideal isolator has $\sigma = 0$ and an ideal conductor has $\sigma = \infty$
+The efficiency loss per unit volume
+\begin{equation}
+	p_J = \mathbf{J}\cdot\mathbf{E}
+\end{equation} 
+Ohm's law on global form
+\begin{equation}
+	V = IR
+\end{equation}
+Efficiency loss in a resistance
+\begin{equation}
+	P_J = \int_v\mathbf{J}\cdot\mathbf{E}dv = V\dfrac{dQ}{dt}=VI = \dfrac{V^2}{R}
+\end{equation} 
+\subsection{Conservation of charge}
+\begin{equation}
+	I_s = -\dfrac{dQ}{dt} \equiv \oint_s \mathbf{J}\cdot \mathbf{S} = -\dfrac{d}{dt}\int_v\rho dv
+\end{equation}
+The minus sign indicates that we are looking at a current going out of the surface, and thus reducing Q. In the statics
+\begin{equation}
+	oint_s \mathbf{J}\cdot \mathbf{S} = 0
+\end{equation}
+This is known as Kirchoffs law of currents.
+For a current hub with n conductors, this can also be stated as
+\begin{equation}
+	\sum_{i=1}^{n} I_i = 0
+\end{equation}
+Kirchoffs is only valid for constant currents. 
+On differential form 
+\begin{equation}
+	\div{\mathbf{J}} = -\dfrac{\delta \rho}{\delta t}
+\end{equation}
+
+\section{2.0 Magnetostatics}
+The forces between conducting conductors. We introduce the magnetic current density $\mathbf{B}$. 
+\section{2.1 Magnetic force, Biot-Savarts law and currentelements}
+
+\section{2.2 Magnetic forces and momentum}
+\section{2.3 Magnetic flux out of a closed surface is zero}
+\section{2.4} Amperes law for constant currents
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \end{document}
